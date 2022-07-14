@@ -95,9 +95,9 @@ console.log(amounts)
 const kiekis = rand(5, 3000);
 const kaina = kiekis*1;
 let newKaina = 0;
-if((kiekis*kaina) >= 1000 && (kiekis*kaina) < 2000){
+if(kiekis*kaina >= 1000 && kiekis*kaina < 2000){
  newKaina=kaina*0.97;
-}else if((kiekis*kaina) >= 2000){
+}else if(kiekis*kaina >= 2000){
     newKaina=kaina*0.96;
 }
 console.log('kaina',kaina)
