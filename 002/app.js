@@ -60,3 +60,14 @@ console.log(namas4)
 const namas3 = ['sds', 'hshddk', 'asfkkr', 'bnncA', 'take'];
 namas3.sort((a, b) => b.localeCompare(a));
 console.log(namas3)
+
+
+console.log('------Reduce-----------');
+const array1 = [1, 2, 3, 4];
+
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
