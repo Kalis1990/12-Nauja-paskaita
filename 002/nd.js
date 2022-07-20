@@ -9,9 +9,9 @@ const skaiciai = [];
 for(let i = 0; i <= 29; i++){
 skaiciai.push(random(5, 25)); 
 }
-// let masyvas = [...array(30)].map(_)
-
-console.log(skaiciai);
+const skaiciai2 = [...Array(30)].map(_=>random(5,25));
+console.log('solution 1',skaiciai);
+console.log('solution 2',skaiciai2);
 
 console.log('-----------------2a-----------------------');
 // let kiekis = 0;
@@ -90,6 +90,17 @@ console.log('variantas b',maziausiasIndex[0])
 
 
 console.log('-----------------3----------------------');
+//let x = ['A', 'B', 'C','D'];
+//let raideles = [...Array(200).map(a => x[random(0, x.length - 1)]);
+//let count =[]
+//for (const i of raideles){
+     //count[i] ? count[i] += 1: count[i] =1} console.log(count)
+
+/*const mas = [...Array(200)].map(_=> ['A','B','C','D'][rand(0,3)]);
+const rez = {A:0, B:0, C:0, D:0}
+mas.foreach(l=>rez[l]++);
+console.log(mas)
+console.log(rez)*/
 
 function randomString(length) {
     let result = [];
@@ -102,6 +113,58 @@ function randomString(length) {
    return result;
 }
 
-console.log(randomString(100));
+console.log(randomString(200));
+
+let ABCD = [randomString(200)], o = []
+ABCD.forEach(w => w.split('').forEach(e => o[e] = (o[e] || 0)+1));
+console.log(o)
+console.log('-----------------4----------------------');
 
 
+const arrayABC = [...new Set(o)].sort();
+console.log('unikalus:', arrayABC.length, arrayABC)
+
+console.log('-----------------5----------------------');
+
+let array1 = [...Array(100)].map(_=>random(100,999));
+let array2 = [...Array(100)].map(_=>random(100,999));
+    unique = array1.filter((el, _) => array1.indexOf(el) === array1.lastIndexOf(el));
+    unique2 = array2.filter((el, _) => array2.indexOf(el) === array2.lastIndexOf(el)); //galima daryti su Set kadangi set tik skaiciuoja nesikartuojancius skaicius
+
+console.log('Nesikartuojantis unikalus skaiciai (1)',unique);
+console.log('Nesikartuojantis unikalus skaiciai (2)',unique2);
+
+/* option nr 2 */
+const m1 = new Set();
+let sk = 0;
+//tas pats length bet set kadangi yra naujiesnis tai galima nauduoti size
+while(m1.size < 100){
+    sk++;
+    m1.add(random(100, 999));
+}
+const m10 = [...m1];
+while(m1.size < 100){
+    sk++;
+    m1.add(random(100, 999));
+}
+const m20 = [...m1];
+
+console.log(sk);
+console.log(m20);
+console.log(m10);
+
+// m1.add('gg');
+// m1.add('gg');
+// m1.add('gg2');
+// m1.add('gg3');
+console.log('-----------------6----------------------');
+//Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 5 uždavinio masyve, bet nėra antrame 5 uždavinio masyve.
+console.log('-----------------7----------------------');
+//Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 5 uždavinio masyvuose.
+console.log('-----------------8----------------------');
+//Sugeneruokite masyvą, kurio indeksus sudarytų 5 uždavinio pirmo masyvo reikšmės, o jo reikšmės  būtų iš  antrojo 5 uždavinio masyvo.
+const uniarr = [];
+for(let i=0; i < m10.length -1; i++){
+    uniarr[m10[i]]= m20[i];
+}
+console.log(uniarr)
