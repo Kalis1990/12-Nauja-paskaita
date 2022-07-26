@@ -1,22 +1,20 @@
 import './App.css';
-import Kosmosas from './Components/005/Kosmosas';
-import Kn from './Components/005/Kn';
+import Text from './Components/008/text';
+import Select from './Components/008/select';
+import Checkbox from './Components/008/Checkbox';
 
-const yel = 'yellow';
-const ms = {color: yel, backgroundColor: 'skyblue'};
-const mas = ['Pilkis', 'Murkis', 'Gagarinas'];
+
 
 function App() { //components fukcijos aprasymas
+
+  // const [count, setCount]= useState(0);
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Labas</h1>
-        {
-          // mas.map((n, i) => <h2 key={i}>{n}</h2>)
-          mas.map((n, i) => <Kn key={i} name={n}></Kn>)
-        }
-        <Kosmosas spalva = {yel} krastas='70px' manoStlius={ms}></Kosmosas>
-        
+      <h1>Form Controll</h1>
+      <Text></Text>
+      <Select></Select>
+      <Checkbox></Checkbox>
       </header>
     </div>
   );

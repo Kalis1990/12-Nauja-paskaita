@@ -52,5 +52,23 @@
     height: 100px;
     border: 3px dotted #61dafb;
     background-color: #61dafb60;
-    animation: App-logo-spin infinite 10s linear;
+    /* animation: App-logo-spin infinite 10s linear; */
+}
+.square {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.circle {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.text {
+  margin: auto;
 }
