@@ -1,22 +1,27 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
-import Text from './Components/008/text';
-import Select from './Components/008/select';
-import Checkbox from './Components/008/Checkbox';
-import Radio from './Components/008/Radio';
-
-
+import axios from 'axios';
 
 function App() { //components fukcijos aprasymas
 
-  // const [count, setCount]= useState(0);
+  const[users, setUsers]= useState([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(res => setUsers(res.data));
+  },[]);
+
   return (
     <div className="App">
       <header className="App-header">
-      <h1>Form Controll</h1>
-      <Text></Text>
-      <Select></Select>
-      <Checkbox></Checkbox>
-      <Radio></Radio>
+        <h1>API</h1>
+        <ul>
+          {
+            users.map(u=><li key={u.id}>{u.name} <span style={{color:'crimson'}}>{u.address.city}</span><span style={{color:'gold'}}> {u.phone}</span></li>)
+          }
+        </ul>
+
       </header>
     </div>
   );

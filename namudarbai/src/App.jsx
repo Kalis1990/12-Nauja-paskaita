@@ -23,14 +23,15 @@ function App() { //components fukcijos aprasymas
       <button onClick={() => setKv(k => [...k, randColor()])}>Prideti</button>
       <div className='kv-bin'>
           <div class="circle">
-          <p class="text">Circle</p>
+
           </div>
-            {
+          {
             kv.map((c, i)=><div className='kv' style={{
               backgroundColor:c +'69,',
               borderColor:c
               }} key={i}></div>)
             }
+            
             </div>
         <div className='ratukas'>
             
